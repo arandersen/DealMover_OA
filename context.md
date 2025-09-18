@@ -97,7 +97,7 @@ This plan is broken down into phases and individual tasks to facilitate step-by-
 
 **Task A5: Implement API Error Handling**
 
-- [ ] Add validation and error handling to the API view:
+- [x] Add validation and error handling to the API view:
   - **400 Bad Request:** For missing or non-PDF files.
   - **422 Unprocessable Entity:** If "Revenue" or "COS" cannot be extracted.
   - **500 Internal Server Error:** For any other unexpected errors.
@@ -108,33 +108,33 @@ This plan is broken down into phases and individual tasks to facilitate step-by-
 
 **Task B1: Scaffold Vite Project**
 
-- [ ] Initialize a new Vite project with the `react-ts` template in the `/frontend` directory.
-- [ ] Verify the setup by running the development server (`npm run dev`).
+- [x] Initialize a new Vite project with the `react-ts` template in the `/frontend` directory.
+- [x] Verify the setup by running the development server (`npm run dev`).
 
 **Task B2: Configure Vite Dev Proxy**
 
-- [ ] Modify `frontend/vite.config.ts` to proxy all requests from `/api` to the backend server at `http://localhost:8000`.
+- [x] Modify `frontend/vite.config.ts` to proxy all requests from `/api` to the backend server at `http://localhost:8000`.
 
 **Task B3: Create API Client**
 
-- [ ] Create `frontend/src/api/client.ts` to handle the `fetch` request to the backend.
-- [ ] Define the necessary TypeScript types for the API request and response in `frontend/src/types.ts`.
+- [x] Create `frontend/src/api/client.ts` to handle the `fetch` request to the backend.
+- [x] Define the necessary TypeScript types for the API request and response in `frontend/src/types.ts`.
 
 **Task B4: Build UI Components**
 
-- [ ] **`App.tsx`:**
+- [x] **`App.tsx`:**
   - Create the main application component.
   - Add state management for the file, date, loading status, and API response/error.
   - Implement the form with a file input, an optional date input, and a submit button.
-- [ ] **`components/ResultsGrid.tsx`:**
+- [x] **`components/ResultsGrid.tsx`:**
   - Create a component to display the results (`Revenue` and `Gross Profit`) in a table.
   - It should receive the data as props and render it without performing any calculations.
 
 **Task B5: Finalize UI and End-to-End Flow**
 
-- [ ] Connect the UI components and the API client.
-- [ ] Implement the end-to-end flow: select file, submit, show loading state, and display results or an error message.
-- [ ] Add basic styling for readability.
+- [x] Connect the UI components and the API client.
+- [x] Implement the end-to-end flow: select file, submit, show loading state, and display results or an error message.
+- [x] Add basic styling for readability.
 
 ---
 
@@ -142,9 +142,9 @@ This plan is broken down into phases and individual tasks to facilitate step-by-
 
 **Task C1: Write Documentation**
 
-- [ ] Update `README.md` with clear setup and run instructions for both the backend and frontend.
-- [ ] Create a `DECISIONS.md` file to document key architectural choices (e.g., why the proxy is used, why calculations are on the backend).
-- [ ] Update `AI_USAGE.md` to reflect the prompts and guidance used during development.
+- [x] Update `README.md` with clear setup and run instructions for both the backend and frontend.
+- [x] Create a `DECISIONS.md` file to document key architectural choices (e.g., why the proxy is used, why calculations are on the backend).
+- [x] Update `AI_USAGE.md` to reflect the prompts and guidance used during development.
 
 **Task C2: End-to-End Testing**
 
