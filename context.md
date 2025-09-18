@@ -84,16 +84,16 @@ This plan is broken down into phases and individual tasks to facilitate step-by-
 
 **Task A3: Implement Gross Profit Calculation**
 
-- [ ] Create a helper function `compute_gross_profit(revenue_str, cos_str)`.
-- [ ] The function should safely convert the normalized string inputs to numbers, calculate the gross profit, and return it as a string.
+- [x] Create a helper function `compute_gross_profit(revenue_str, cos_str)`.
+- [x] The function should safely convert the normalized string inputs to numbers, calculate the gross profit, and return it as a string.
 
 **Task A4: Create the API Endpoint**
 
-- [ ] In `core/views.py`, create a view for `POST /api/extract/`.
-- [ ] The view should handle a `multipart/form-data` request containing the PDF file and an optional `period_end_date`.
-- [ ] Orchestrate the calls to the parsing and calculation functions.
-- [ ] Return the final JSON response as specified in the PRD.
-- [ ] Wire up the view in `core/urls.py`.
+- [x] In `core/views.py`, create a view for `POST /api/extract/`.
+- [x] The view should handle a `multipart/form-data` request containing the PDF file and an optional `period_end_date`.
+- [x] Orchestrate the calls to the parsing and calculation functions.
+- [x] Return the final JSON response as specified in the PRD.
+- [x] Wire up the view in `core/urls.py`.
 
 **Task A5: Implement API Error Handling**
 
