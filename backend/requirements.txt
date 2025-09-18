@@ -1,0 +1,2 @@
+Django>=5.0
+pdfminer.six>=20221105
