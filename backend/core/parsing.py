@@ -3,6 +3,7 @@ import re
 from typing import Optional, Dict
 from pdfminer.high_level import extract_text
 from pdfminer.layout import LAParams
+from decimal import Decimal, InvalidOperation
 
 _NUMBER_RE = re.compile(r'\(?\s*\$?\s*[0-9][0-9,]*(?:\.[0-9]+)?\s*\)?')
 
@@ -74,3 +75,32 @@ def extract_values_from_pdf(pdf_bytes: bytes) -> Dict[str, Optional[str]]:
         i += 1
 
     return {"revenue": revenue, "cos": cos}
+
+def compute_gross_profit(revenue_str: str, cos_str: str) -> str:
+    """
+    Compute gross_profit = revenue - cos.
+    Inputs are normalized numeric strings (may include a leading '-'
+    and/or a decimal point). Returns a numeric string with no commas
+    or trailing zeros. Raises ValueError for missing/invalid inputs.
+    """
+    if revenue_str is None or cos_str is None:
+        raise ValueError("Missing revenue or cost of sales value.")
+
+    try:
+        rev = Decimal(revenue_str)
+        cos = Decimal(cos_str)
+    except InvalidOperation as e:
+        raise ValueError("Invalid numeric input for revenue or cost of sales.") from e
+
+    gp = rev - cos
+
+    # Format as a plain string (no scientific notation), strip trailing zeros.
+    s = format(gp.normalize(), 'f')  # e.g., '203712.000' -> '203712'
+    if '.' in s:
+        s = s.rstrip('0').rstrip('.')
+
+    # Avoid '-0' edge case
+    if s in ('-0', '-0.0', '0.0'):
+        s = '0'
+
+    return s

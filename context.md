@@ -75,12 +75,12 @@ This plan is broken down into phases and individual tasks to facilitate step-by-
 
 **Task A2: Implement PDF Parsing Utility**
 
-- [ ] In the `core` app, create a `parsing.py` file.
-- [ ] Implement a function `extract_values_from_pdf(file_bytes)` that:
+- [x] In the `core` app, create a `parsing.py` file.
+- [x] Implement a function `extract_values_from_pdf(file_bytes)` that:
   - Converts the PDF content to text.
   - Finds and extracts the values for "Revenue" and "Cost of Sales".
   - Normalizes the values (removes `$` and spaces, handles `(123)` as negative).
-- [ ] The function should return a dictionary: `{"revenue": "...", "cos": "..."}`.
+- [x] The function should return a dictionary: `{"revenue": "...", "cos": "..."}`.
 
 **Task A3: Implement Gross Profit Calculation**
 
